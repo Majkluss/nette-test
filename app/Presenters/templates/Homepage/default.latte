@@ -1,0 +1,17 @@
+{* This is the welcome page, you can delete it *}
+
+{block content}
+<link rel="stylesheet" href="{$basePath}/css/style.css">
+<title n:block="title">Články</title>
+
+
+{*foreach $posts as $post*}
+<h1>Články:</h1>
+    <div n:foreach="$posts as $post" class="post">
+        <hr>
+        <!--<h2><a href="{link Post:show $post->id}">{$post->title}</a></h2>-->
+        <h2><a n:href="Post:show $post->id">{$post->title}</a></h2>
+        <p class="author">Autor příspěvku: {$post->autor}</p>
+    </div>
+    {*/foreach*}
+    {/block}

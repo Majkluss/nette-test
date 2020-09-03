@@ -1,0 +1,21 @@
+{* Latte template *}
+{block content}
+<link rel="stylesheet" href="{$basePath}/css/style.css">
+    <h1>{$post->title}</h1>
+    <p class="post">{$post->text}</p>
+    {if}
+    <img class="obrazek" src="{$basePath}/img/{$post->obrazek}.jpg">
+    {/if $post->obrazek}
+    <h5>Autor: {$post->autor}</h5>
+    <hr>
+    <h2>Vložte komentář</h2>
+    {control commentForm}
+    <p><a n:href="Homepage:default">Zpět</a></p>
+    
+    <h2>Komentáře</h2>
+    <div class="comments">
+        {foreach $comments as $comment}
+            <h3><b><a href="mailto:{$comment->email}" n:tag-if="$comment->email">{$comment->name}</a></b> napsal:</h3>
+            <div>{$comment->content}</div>
+        {/foreach}
+    </div>

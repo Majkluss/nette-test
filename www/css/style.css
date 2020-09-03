@@ -1,0 +1,176 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1.9.2020, 16:19:31
+    Author     : Majkl
+*/
+
+.author{
+    font-size:20px;
+    border: 1px solid grey;
+    max-width: 200px;
+    min-height: 30px;
+    font-family:bold;
+    background-color:red;
+    color:white;
+}
+
+.post
+{
+    max-width: 300px;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.banner
+{
+    display:flex;
+    box-sizing: border-box;
+    width:300px;
+    height:60px;
+    background:white;
+    opacity:0.5;
+    top: 5vh;
+    left: 3vh;
+}
+
+html{
+    background-image:url('../img/mountains.jpg');
+    background-position:center center;
+    background-size:cover;
+    background-attachment: fixed;
+    background-repeat:no-repeat;
+    background-color:grey;
+}
+
+nav{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background:rgb(3, 98, 223);
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo a
+{
+    color:whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size:20px;
+    text-decoration:none;
+}
+
+.nav-links{
+    display:flex;
+    justify-content: space-evenly;
+    width:30%;
+    transition:all 0.5s ease-out;
+    
+}
+
+.nav-links li{
+    list-style:none;
+}
+
+.nav-links a{
+    color:whitesmoke;
+    text-decoration:none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size:14px;
+}
+
+.burger{
+    display:none;
+}
+
+.burger div
+{
+    width:25px;
+    height: 3px;
+    border-radius:25%;
+    background:whitesmoke;
+    margin:5px;
+    transition:all 0.4s ease-out;
+}
+
+@media screen and (max-width:1024px){
+    .nav-links{
+        width:40%;
+    }
+}
+
+@media screen and (max-width:768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .nav-links{
+        position:absolute;
+        right:0px;
+        height:92vh;
+        top: 8vh;
+        background:rgb(3, 98, 223);
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        width:30%;
+        transform:translateX(100%);
+        transition:all 0.4s ease-out;
+    }
+
+    .nav-links li{
+        opacity:0;
+    }
+
+    .burger{
+        display:block;
+        cursor: pointer;
+    }
+}
+
+
+@keyframes navLinkFadeIn{
+    from{
+        opacity:0;
+        transform:translateX(50px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0px);
+    }
+}
+
+.nav-active{
+    transform:translateX(0%);
+}
+
+.toggle .line1{
+    transform:rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform:rotate(45deg) translate(-5px, -6px);
+}
+
+.header{
+    min-height: 50vh;
+    margin:5vh;
+    background-color:white;
+    padding:5vh;
+}
+
+.obrazek{
+    max-height: 300px;
+}

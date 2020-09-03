@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="cs-cz">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="{$basePath}/css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<title>{ifset title}{include title|stripHtml} | {/ifset}Nette</title>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h4><a n:href="Homepage:default">Míšanews</a></h4>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Domů</a></li>
+            <li><a href="#">O nás</a></li>
+            <li><a href="#">Články</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div class="header">
+	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
+	{include content}
+
+	{block scripts}
+	<script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+        <script src="{$basePath}/js/app.js"></script>
+	{/block}
+    </div>
+</body>
+</html>
